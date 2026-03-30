@@ -1,6 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.rcParams['font.family'] = 'Malgun Gothic'  # 윈도우 한글 폰트
+matplotlib.rcParams['axes.unicode_minus'] = False      # 마이너스 기호 깨짐 방지
+
+
 
 #==========================================================================================================
 # 문제 1. 남녀의 체중 데이터 생성
@@ -140,8 +146,8 @@ print(f"MAP 학습 정확도: {acc_train_map*100:.1f}% / 시험 정확도: {acc_
 # 선호색상의 분포는 남녀가 각각 편중된 경향을 가정
 #===========================================================================================================
 
-p_red_male = 0.7
-p_red_female = 0.3
+p_red_male = 0.3
+p_red_female = 0.7
 
 #binomial(n,p,size) : n번 시행해서 성공확률이 p인 시행을 size개수만큼 반복해서 성공한 횟수를 반환하는 함수
 color_male = np.random.binomial(1, p_red_male, num_male)
@@ -265,4 +271,3 @@ plt.legend(fontsize=8)
 plt.tight_layout()
 plt.savefig('plot_linear_discriminant.png', dpi=120)
 plt.show()
-
